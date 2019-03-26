@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar color="dark">
+		<button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+		<ion-title>About Us</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="page-about-us" >
+<ion-card>
+	<img src="./assets/images/landscape/image-1.jpg" alt=""/>
+	<ion-card-header>
+		<h1><strong>Test</strong> <small>v01.01.01</small></h1>
+	</ion-card-header>
+	<ion-card-content>
+		<p>Test</p>
+		<p>by <strong>ATF</strong></p>
+	</ion-card-content>
+</ion-card>
+<ion-card>
+	<ion-card-header>
+			Contact Us
+	</ion-card-header>
+	<ion-list>
+		<button ion-item (click)="openWithSystemBrowser('http://cs.fr')">
+			<ion-icon color="danger" name="help-buoy" item-start></ion-icon>
+			CS
+		</button>
+		<button ion-item (click)="openWithAppEmail('at@cadic.fr','message subject','Write your message here')">
+			<ion-icon color="secondary" name="mail" item-start></ion-icon>
+			at@cadic.fr
+		</button>
+	</ion-list>
+</ion-card>
+
+</ion-content>

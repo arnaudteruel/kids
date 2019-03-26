@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="page-home" >
+	<ion-slides pager>
+		<ion-slide *ngFor="let item of slideItems; last as isLast">
+			<ion-toolbar>
+				<ion-buttons end *ngIf="!isLast">
+					<button ion-button color="primary" (click)="goToPage('about_us')">Skip</button>
+				</ion-buttons>
+				<ion-buttons *ngIf="isLast">
+				</ion-buttons>
+			</ion-toolbar>
+			<img [src]="item.image" class="slide-image"/>
+			<h2 class="slide-title" [innerHTML]="item.title"></h2>
+			<p *ngIf="!isLast" [innerHTML]="item.description"></p>
+			<button *ngIf="isLast" ion-button large clear icon-end color="primary" (click)="goToPage('about_us')">
+				Continue <ion-icon name="arrow-forward"></ion-icon>
+			</button>
+		</ion-slide>
+	</ion-slides>
+
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-menu [content]="content">
+	<ion-header>
+		<ion-toolbar text-center color="dark">
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+
+		<ion-list>
+			
+			<ion-item class="item-divider"  color="default">
+				Dashboard
+			</ion-item>
+			
+			<ion-item (click)="goToPage('menu_1')"  color="default">
+				<ion-icon name="menu" item-left color="secondary"></ion-icon>
+				Menu 1
+				<ion-icon name="arrow-dropright" item-right color="default"></ion-icon>
+			</ion-item>
+			
+			<ion-item class="item-divider"  color="default">
+				Help
+			</ion-item>
+			
+			<ion-item (click)="openWithAppPlaystore('com.imabuilder.cs.test')"  color="default">
+				<ion-icon name="appstore" item-left color="primary"></ion-icon>
+				Rate This App
+				<ion-icon name="arrow-dropright" item-right color="default"></ion-icon>
+			</ion-item>
+			
+			<ion-item (click)="goToPage('privacy_policy')"  color="default">
+				<ion-icon name="help-circle" item-left color="secondary"></ion-icon>
+				Privacy Policy
+				<ion-icon name="arrow-dropright" item-right color="default"></ion-icon>
+			</ion-item>
+			
+			<ion-item (click)="goToPage('faqs')"  color="default">
+				<ion-icon name="help-circle" item-left color="secondary"></ion-icon>
+				FAQs
+				<ion-icon name="arrow-dropright" item-right color="default"></ion-icon>
+			</ion-item>
+			
+			<ion-item (click)="goToPage('about_us')"  color="default">
+				<ion-icon name="people" item-left color="danger"></ion-icon>
+				About US
+				<ion-icon name="arrow-dropright" item-right color="default"></ion-icon>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
